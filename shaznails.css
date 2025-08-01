@@ -1,0 +1,211 @@
+/* Basic Resets & Body Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fce4ec; /* Lightest pink/almost white */
+    color: #b85081;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer sticks to bottom */
+}
+
+.header {
+    background-color: #f7c7d7; /* Medium pink for header */
+    color: rgb(233, 112, 186);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    margin-bottom: 10px;
+}
+
+.logo {
+    max-width: 150px; /* Adjust as needed */
+    height: auto;
+    border-radius: 50%; /* Makes the logo circular */
+    border: 3px solid rgb(233, 112, 186);;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8em;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1.1em;
+    opacity: 0.9;
+    margin-bottom: 20px; /* Space below tagline */
+}
+
+/* New contact info styling */
+.contact-info {
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a,
+.footer-contact a {
+    color: rgb(250, 244, 248);;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover,
+.footer-contact a:hover {
+    color: #ffe0f0; /* Lighter pink on hover */
+    text-decoration: underline;
+}
+
+.price-list-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #f7e8f1; /* White background for the main content */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Allows the container to grow and push footer down */
+}
+
+.category {
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #ffc0cb; /* Light pink dashed line */
+    padding-bottom: 20px;
+}
+
+.category:last-child {
+    border-bottom: none; /* No border for the last category */
+    padding-bottom: 0;
+}
+
+.category h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    color: #fa91c5; /* Hot pink for category titles */
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.category h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ff69b4;
+    margin: 5px auto 0;
+    border-radius: 2px;
+}
+
+.category ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.category li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px dotted #f06292; /* Slightly darker pink dotted line */
+    font-size: 1.1em;
+}
+
+.category li:last-child {
+    border-bottom: none;
+}
+
+.category li span {
+    font-weight: 600; /* Make service names slightly bolder */
+    color: #d81b60; /* Darker pink for service names */
+    flex-grow: 1; /* Allows span to take available space */
+}
+
+.category li::after {
+    content: attr(data-price); /* Not used with current HTML, but good for dynamic JS */
+    color: #555;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #cc7390; /* Same as header */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-contact {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .category h2 {
+        font-size: 1.8em;
+    }
+
+    .category li {
+        font-size: 1em;
+        flex-direction: column; /* Stack name and price on smaller screens */
+        align-items: flex-start;
+    }
+
+    .category li span {
+        margin-bottom: 5px; /* Add space between stacked items */
+    }
+
+    .price-list-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .contact-info, .footer-contact {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .category h2 {
+        font-size: 1.6em;
+    }
+
+    .logo {
+        width: 150px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        
+    }
+}
